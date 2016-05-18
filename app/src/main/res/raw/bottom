@@ -1,0 +1,9 @@
+[
+{
+    "imageName": "bottom",
+    "id": "bottom-1",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+]
