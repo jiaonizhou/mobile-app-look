@@ -17,7 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Closet" />
         <activity android:name=".ViewCloset" />
         <activity android:name=".AddCloth"></activity>
     </application>

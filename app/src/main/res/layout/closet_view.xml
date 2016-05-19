@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="30dp"
+    >
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/topCloset"
+            android:text="Top"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+        >
+        </Button>
+        <Button
+            android:id="@+id/bottomCloset"
+            android:text="Bottom"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+        >
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/dressCloset"
+            android:text="Dress"
+            android:layout_height="100dp"
+            android:layout_weight="1">
+        </Button>
+        <Button
+            android:id="@+id/shoeCloset"
+            android:text="Shoes"
+            android:layout_height="100dp"
+            android:layout_weight="1">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/accessaryCloset"
+            android:text="Accessary"
+            android:layout_height="100dp"
+            android:layout_weight="1">
+        </Button>
+        <Button
+            android:id="@+id/bagCloset"
+            android:text="Bag"
+            android:layout_height="100dp"
+            android:layout_weight="1">
+        </Button>
+    </TableRow>
+
+</TableLayout>

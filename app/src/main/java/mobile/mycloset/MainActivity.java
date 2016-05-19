@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 if (!wasSelected) {
                     if (position == 0) {
                         currentFragment = TodayFragment.getInstance();
+                    } else if (position == 1) {
+                        currentFragment = ClosetFragment.getInstance();
                     }
                     fragmentManager.beginTransaction()
                             .replace(R.id.fragment_container, currentFragment)
