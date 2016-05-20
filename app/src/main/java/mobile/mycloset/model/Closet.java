@@ -23,6 +23,10 @@ import mobile.mycloset.utils.Utils;
  */
 public class Closet {
 
+    public enum ApprarelType {
+        TOP, BOTTOM, SHOES, BAG, DRESS, ACCESSORY;
+    }
+
     private static Closet closet;
 
     List<Top> tops = new ArrayList<>();
@@ -138,6 +142,20 @@ public class Closet {
              }
         }
         topBottomSuites.add(suite);
+    }
+
+    public List<? extends Apparel> getAllApparel(ApprarelType type) {
+        switch (type) {
+            case TOP:
+                return tops;
+            case BOTTOM:
+                return bottoms;
+            case BAG:
+                return bags;
+            case SHOES:
+                return shoes;
+        }
+        return new ArrayList<Top>();
     }
 
     private Apparel randomSelect(List<? extends Apparel> candidates, Utils.WeatherInfo weatherInfo) {

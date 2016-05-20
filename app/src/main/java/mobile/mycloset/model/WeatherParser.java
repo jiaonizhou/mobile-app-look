@@ -8,22 +8,22 @@ public class WeatherParser {
     }
 
     public static Weather parseWeatherCode(int code) {
-        if (code >= 200) {
-            return Weather.RAINY;
-        } else if (code >= 300) {
-            return Weather.RAINY;
-        } else if (code >= 500) {
-            return Weather.RAINY;
-        } else if (code >= 600) {
-            return Weather.SNOWY;
-        } else if (code >= 700) {
+        if (code >= 900) {
+            return Weather.WINDY;
+        } else if (code > 800) {
             return Weather.CLOUDY;
         } else if (code == 800) {
             return Weather.SUNNY;
-        } else if (code > 800) {
-            return Weather.CLOUDY;
-        } else if (code >= 900) {
-            return Weather.WINDY;
+        } else if (code == 800) {
+            return Weather.SUNNY;
+        } else if (code >= 600) {
+            return Weather.SNOWY;
+        } else if (code >= 500) {
+            return Weather.RAINY;
+        } else if (code >= 300) {
+            return Weather.RAINY;
+        } else if (code >= 200) {
+            return Weather.RAINY;
         }
         return Weather.SUNNY;
     }

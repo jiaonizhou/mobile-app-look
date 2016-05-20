@@ -7,26 +7,30 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import java.util.List;
+
+import mobile.mycloset.model.Apparel;
+
 /**
  * Created by Cindy on 5/18/16.
  */
 public class ClosetAdapter extends BaseAdapter {
     private Context context;
-    Integer[] buttonList;
+    List<? extends Apparel> buttonList;
 
     public ClosetAdapter(Context callingActivityContext,
-                         Integer[] buttonList) {
+                         List<? extends Apparel> buttonList) {
         context = callingActivityContext;
         this.buttonList = buttonList;
     }
     @Override
     public int getCount() {
-        return buttonList.length;
+        return buttonList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return buttonList[position];
+        return buttonList.get(position);
     }
 
     @Override
@@ -38,8 +42,11 @@ public class ClosetAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
         if(convertView == null){
+            GridView grid = (GridView)parent;
+            int size = grid.getColumnWidth();
+
             imageView = new ImageView(context);
-            imageView.setLayoutParams(new GridView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            imageView.setLayoutParams(new GridView.LayoutParams(size, size));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(20, 10, 10, 10);
             imageView.setMaxWidth(40);
@@ -49,7 +56,7 @@ public class ClosetAdapter extends BaseAdapter {
             imageView = (ImageView) convertView;
         }
 
-        imageView.setImageResource(buttonList[position]);
+        imageView.setImageResource(buttonList.get(position).getResourceId(context));
         return imageView;
     }
 }

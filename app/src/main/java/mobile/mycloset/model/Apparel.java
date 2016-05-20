@@ -2,6 +2,7 @@ package mobile.mycloset.model;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class Apparel {
                 temperature <= maxTemp;
     }
 
-    public int getResourceId(Activity context) {
+    public int getResourceId(Context context) {
         return context.getResources()
                 .getIdentifier(imageName, "drawable", context.getPackageName());
     }
