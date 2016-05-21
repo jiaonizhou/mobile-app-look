@@ -1,9 +1,11 @@
 package mobile.mycloset;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -75,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
                         currentFragment = TodayFragment.getInstance();
                     } else if (position == 1) {
                         currentFragment = ClosetFragment.getInstance();
+                    } else if (position == 2){
+                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        startActivityForResult(intent,1234);
                     }
                     fragmentManager.beginTransaction()
                             .replace(R.id.fragment_container, currentFragment)
@@ -83,13 +88,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         currentFragment = TodayFragment.getInstance();
         fragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, currentFragment)
                 .commit();
     }
+    /**
+     * check camera result
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if (resultCode == RESULT_OK){
+            Intent intent = new Intent(this,AddCloth.class);
+            startActivity(intent);
+        }
 
+    }
 
     /**
      * Update the bottom navigation colored param
