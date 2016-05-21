@@ -85,8 +85,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:id="@+id/button2"
+        android:text="Next"
+        android:id="@+id/next"
         android:layout_alignTop="@+id/button"
         android:layout_alignRight="@+id/type"
         android:layout_alignEnd="@+id/type"
