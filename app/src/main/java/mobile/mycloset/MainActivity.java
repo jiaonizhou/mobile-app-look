@@ -1,6 +1,7 @@
 package mobile.mycloset;
 
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
@@ -23,6 +24,7 @@ import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 import java.util.UUID;
 
 import mobile.mycloset.model.Apparel;
@@ -33,16 +35,15 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppFragmentActivity {
 
     private ArrayList<AHBottomNavigationItem> bottomNavigationItems = new ArrayList<>();
     private AHBottomNavigation bottomNavigation;
-    private Fragment currentFragment;
-    private FragmentManager fragmentManager = getFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         Closet.getCloset().initCloset(this);
         initUI();
@@ -55,10 +56,13 @@ public class MainActivity extends AppCompatActivity {
         AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.notification_background, R.color.color_tab_1);
         AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.notification_background, R.color.color_tab_2);
         AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.notification_background, R.color.color_tab_3);
+        AHBottomNavigationItem item4 = new AHBottomNavigationItem(R.string.tab_4, R.drawable.notification_background, R.color.color_tab_4);
+
 
         bottomNavigationItems.add(item1);
         bottomNavigationItems.add(item2);
         bottomNavigationItems.add(item3);
+        bottomNavigationItems.add(item4);
 
         bottomNavigation.addItems(bottomNavigationItems);
         bottomNavigation.setAccentColor(Color.parseColor("#F63D2B"));
@@ -71,25 +75,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(int position, boolean wasSelected) {
                 if (!wasSelected) {
+                    Fragment fragment = null;
                     if (position == 0) {
-                        currentFragment = TodayFragment.getInstance();
+                        fragment = TodayFragment.getInstance();
                     } else if (position == 1) {
-                        currentFragment = ClosetFragment.getInstance();
+                        fragment = ClosetFragment.getInstance();
+                    } else if (position == 3) {
+                        fragment = FavFragment.getInstance();
                     }
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.fragment_container, currentFragment)
-                            .commit();
+                    newFragment(R.id.fragment_container, fragment);
                 }
             }
         });
 
-
-        currentFragment = TodayFragment.getInstance();
-        fragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, currentFragment)
-                .commit();
+        newFragment(R.id.fragment_container, TodayFragment.getInstance());
     }
 
+    @Override
+    public void onBackPressed() {
+        if (numFragments() >= 2) {
+            popFragment();
+        } else {
+            super.onBackPressed();
+        }
+    }
 
     /**
      * Update the bottom navigation colored param

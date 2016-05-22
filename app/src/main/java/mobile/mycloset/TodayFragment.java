@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -16,9 +17,15 @@ import android.widget.TextView;
 
 import org.json.JSONObject;
 
+import java.io.BufferedOutputStream;
 import java.io.IOException;
 
+import mobile.mycloset.model.Apparel;
+import mobile.mycloset.model.Bag;
+import mobile.mycloset.model.Bottom;
 import mobile.mycloset.model.Closet;
+import mobile.mycloset.model.Shoe;
+import mobile.mycloset.model.Top;
 import mobile.mycloset.model.TopBottomSuite;
 import mobile.mycloset.model.WeatherParser;
 import mobile.mycloset.utils.Utils;
@@ -58,7 +65,7 @@ public class TodayFragment extends Fragment {
         final ImageView topView = (ImageView)view.findViewById(R.id.top_placeholder);
         final ImageView bottomView = (ImageView)view.findViewById(R.id.bottom_placeholder);
         final Button favButton = (Button)view.findViewById(R.id.fav);
-        final Activity activity = getActivity();
+        final MainActivity activity = (MainActivity)getActivity();
         try {
             Call weatherInfoCall = Utils.getWeatherCall(new Callback() {
                 @Override
@@ -89,6 +96,59 @@ public class TodayFragment extends Fragment {
                                     shoeView.setImageResource(suite.shoe.getResourceId(getActivity()));
                                     topView.setImageResource(suite.top.getResourceId(getActivity()));
                                     bottomView.setImageResource(suite.bottom.getResourceId(getActivity()));
+
+                                    bagView.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BAG,
+                                                    new ClosetListFragment.OnClickItemListener() {
+                                                        @Override
+                                                        public void onClick(AdapterView parent, View view, Apparel apparel) {
+                                                            suite.bag = (Bag)apparel;
+                                                        }
+                                                    });
+                                            activity.pushFragment(R.id.fragment_container, fragment);
+                                        }
+                                    });
+                                    topView.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.TOP,
+                                                    new ClosetListFragment.OnClickItemListener() {
+                                                        @Override
+                                                        public void onClick(AdapterView parent, View view, Apparel apparel) {
+                                                            suite.top = (Top)apparel;
+                                                        }
+                                                    });
+                                            activity.pushFragment(R.id.fragment_container, fragment);
+                                        }
+                                    });
+                                    bottomView.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BOTTOM,
+                                                    new ClosetListFragment.OnClickItemListener() {
+                                                        @Override
+                                                        public void onClick(AdapterView parent, View view, Apparel apparel) {
+                                                            suite.bottom = (Bottom)apparel;
+                                                        }
+                                                    });
+                                            activity.pushFragment(R.id.fragment_container, fragment);
+                                        }
+                                    });
+                                    shoeView.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.SHOES,
+                                                    new ClosetListFragment.OnClickItemListener() {
+                                                        @Override
+                                                        public void onClick(AdapterView parent, View view, Apparel apparel) {
+                                                            suite.shoe = (Shoe)apparel;
+                                                        }
+                                                    });
+                                            activity.pushFragment(R.id.fragment_container, fragment);
+                                        }
+                                    });
                                 } else {
                                     Log.e(getClass().toString(), "The generated suite is invalid");
                                 }

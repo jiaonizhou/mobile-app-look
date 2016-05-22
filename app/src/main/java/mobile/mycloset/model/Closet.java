@@ -29,12 +29,12 @@ public class Closet {
 
     private static Closet closet;
 
-    List<Top> tops = new ArrayList<>();
-    List<Bottom> bottoms = new ArrayList<>();
-    List<Shoe> shoes = new ArrayList<>();
-    List<Bag> bags = new ArrayList<>();
+    public List<Top> tops = new ArrayList<>();
+    public List<Bottom> bottoms = new ArrayList<>();
+    public List<Shoe> shoes = new ArrayList<>();
+    public List<Bag> bags = new ArrayList<>();
 
-    List<TopBottomSuite> topBottomSuites = new ArrayList<>();
+    public List<TopBottomSuite> topBottomSuites = new ArrayList<>();
 
 
     public static Closet getCloset() {

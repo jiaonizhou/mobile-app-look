@@ -42,50 +42,41 @@ public class ClosetFragment extends Fragment {
         final Button shoesButton = (Button)view.findViewById(R.id.shoeCloset);
         final Button accessaryButton = (Button)view.findViewById(R.id.accessaryCloset);
         final Button bagButton = (Button)view.findViewById(R.id.bagCloset);
+        final MainActivity activity = (MainActivity)getActivity();
 
         topButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.TOP);
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.TOP, null);
+                activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
         bottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BOTTOM);
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BOTTOM, null);
+                activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
         dressButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.DRESS);
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.DRESS, null);
+                activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
         bagButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BAG);
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BAG, null);
+                activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
         topButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.TOP);
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.TOP, null);
+                activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
 

@@ -10,20 +10,29 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import java.util.List;
+
+import mobile.mycloset.model.Apparel;
 import mobile.mycloset.model.Closet;
 
 /**
  * Created by xrz on 5/19/16.
  */
 public class ClosetListFragment extends Fragment implements AdapterView.OnItemClickListener {
+    public static abstract class OnClickItemListener<VH extends Apparel> {
+        public abstract void onClick(AdapterView<?> parent, View view, VH apparel);
+    }
+
     private static ClosetListFragment fragment;
 
     private View view;
     private Closet.ApprarelType type;
+    private OnClickItemListener listener;
 
-    public static ClosetListFragment getInstance(Closet.ApprarelType type) {
+    public static ClosetListFragment getInstance(Closet.ApprarelType type, OnClickItemListener listener) {
         fragment = new ClosetListFragment();
         fragment.type = type;
+        fragment.listener = listener;
         return fragment;
     }
 
@@ -44,7 +53,11 @@ public class ClosetListFragment extends Fragment implements AdapterView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        if (listener == null) {
+            return;
+        }
+        Apparel apparel = Closet.getCloset().getAllApparel(type).get(position);
+        listener.onClick(parent, view, apparel);
     }
 
 }
