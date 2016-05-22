@@ -2,9 +2,11 @@ package mobile.mycloset;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -79,18 +81,42 @@ public class MainActivity extends AppFragmentActivity {
                     if (position == 0) {
                         fragment = TodayFragment.getInstance();
                     } else if (position == 1) {
+<<<<<<< HEAD
                         fragment = ClosetFragment.getInstance();
                     } else if (position == 3) {
                         fragment = FavFragment.getInstance();
+=======
+                        currentFragment = ClosetFragment.getInstance();
+                    } else if (position == 2){
+                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        startActivityForResult(intent,1234);
+>>>>>>> 98b3e343b3f4d366d0a8cb7347c3c1123904de21
                     }
                     newFragment(R.id.fragment_container, fragment);
                 }
             }
         });
 
+<<<<<<< HEAD
         newFragment(R.id.fragment_container, TodayFragment.getInstance());
+=======
+        currentFragment = TodayFragment.getInstance();
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, currentFragment)
+                .commit();
+>>>>>>> 98b3e343b3f4d366d0a8cb7347c3c1123904de21
     }
+    /**
+     * check camera result
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if (resultCode == RESULT_OK){
+            Intent intent = new Intent(this,AddCloth.class);
+            startActivity(intent);
+        }
 
+<<<<<<< HEAD
     @Override
     public void onBackPressed() {
         if (numFragments() >= 2) {
@@ -98,6 +124,8 @@ public class MainActivity extends AppFragmentActivity {
         } else {
             super.onBackPressed();
         }
+=======
+>>>>>>> 98b3e343b3f4d366d0a8cb7347c3c1123904de21
     }
 
     /**
