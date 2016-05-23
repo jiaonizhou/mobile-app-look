@@ -63,4 +63,14 @@ public class AppFragmentActivity extends AppCompatActivity {
     public int numFragments() {
         return fragmentStack.size();
     }
+
+
+    @Override
+    public void onBackPressed() {
+        if (numFragments() >= 2) {
+            popFragment();
+        } else {
+            super.onBackPressed();
+        }
+    }
 }

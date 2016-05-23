@@ -14,8 +14,6 @@ public class WeatherParser {
             return Weather.CLOUDY;
         } else if (code == 800) {
             return Weather.SUNNY;
-        } else if (code == 800) {
-            return Weather.SUNNY;
         } else if (code >= 600) {
             return Weather.SNOWY;
         } else if (code >= 500) {

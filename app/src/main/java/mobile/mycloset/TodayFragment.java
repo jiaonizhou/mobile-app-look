@@ -105,6 +105,8 @@ public class TodayFragment extends Fragment {
                                                         @Override
                                                         public void onClick(AdapterView parent, View view, Apparel apparel) {
                                                             suite.bag = (Bag)apparel;
+                                                            bagView.setImageResource(suite.bag.getResourceId(getActivity()));
+                                                            activity.popFragment();
                                                         }
                                                     });
                                             activity.pushFragment(R.id.fragment_container, fragment);
@@ -118,6 +120,8 @@ public class TodayFragment extends Fragment {
                                                         @Override
                                                         public void onClick(AdapterView parent, View view, Apparel apparel) {
                                                             suite.top = (Top)apparel;
+                                                            topView.setImageResource(suite.top.getResourceId(getActivity()));
+                                                            activity.popFragment();
                                                         }
                                                     });
                                             activity.pushFragment(R.id.fragment_container, fragment);
@@ -131,6 +135,8 @@ public class TodayFragment extends Fragment {
                                                         @Override
                                                         public void onClick(AdapterView parent, View view, Apparel apparel) {
                                                             suite.bottom = (Bottom)apparel;
+                                                            bottomView.setImageResource(suite.bottom.getResourceId(getActivity()));
+                                                            activity.popFragment();
                                                         }
                                                     });
                                             activity.pushFragment(R.id.fragment_container, fragment);
@@ -144,6 +150,8 @@ public class TodayFragment extends Fragment {
                                                         @Override
                                                         public void onClick(AdapterView parent, View view, Apparel apparel) {
                                                             suite.shoe = (Shoe)apparel;
+                                                            shoeView.setImageResource(suite.shoe.getResourceId(getActivity()));
+                                                            activity.popFragment();
                                                         }
                                                     });
                                             activity.pushFragment(R.id.fragment_container, fragment);

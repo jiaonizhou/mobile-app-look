@@ -1,6 +1,6 @@
 [
 {
-    "imageName": "bottom",
+    "imageName": "bottom1",
     "id": "bottom-1",
     "weather" : ["SUNNY", "RAINY"],
     "minTemp": 30,

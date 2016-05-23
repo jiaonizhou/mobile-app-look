@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class Apparel {
     public String imageName;
+    public String filePath;
     public String id;
     public List<WeatherParser.Weather> weathers;
     public double minTemp;
