@@ -1,5 +1,6 @@
 package mobile.mycloset.model;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 
 import org.json.JSONArray;
@@ -160,7 +161,7 @@ public class Closet {
         return new ArrayList<Top>();
     }
 
-    public Closet save(AppCompatActivity activity) {
+    public Closet save(Activity activity) {
         try {
             InternalStorage.writeObject(activity, "ALL_TOPS", tops);
             InternalStorage.writeObject(activity, "ALL_BOTTOMS", bottoms);
@@ -173,7 +174,7 @@ public class Closet {
         return this;
     }
 
-    public Closet load(AppCompatActivity activity) {
+    public Closet load(Activity activity) {
         try {
             tops = (List<Top>)InternalStorage.readObject(activity, "ALL_TOPS");
             bottoms = (List<Bottom>)InternalStorage.readObject(activity, "ALL_BOTTOMS");

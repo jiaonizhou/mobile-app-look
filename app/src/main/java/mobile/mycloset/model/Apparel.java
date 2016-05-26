@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public class Apparel implements Serializable {
     public String imageName;
     public String filePath;
     public String id;
-    public List<WeatherParser.Weather> weathers;
+    public List<WeatherParser.Weather> weathers = new ArrayList<>();
     public double minTemp;
     public double maxTemp;
     public ApprarelType type;
@@ -33,8 +34,13 @@ public class Apparel implements Serializable {
     }
 
     public Bitmap getBitmap(Context context) {
-        return BitmapFactory.decodeResource(context.getResources(),
-                context.getResources().getIdentifier(imageName, "drawable", context.getPackageName()));
+        if (imageName != null) {
+            return BitmapFactory.decodeResource(context.getResources(),
+                    context.getResources().getIdentifier(imageName, "drawable", context.getPackageName()));
+        } else if (filePath != null) {
+            return BitmapFactory.decodeFile(filePath.substring(7));
+        }
+        return null;
     }
 
     public boolean isEqual(Apparel a) {
