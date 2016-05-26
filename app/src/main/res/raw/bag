@@ -1,16 +1,31 @@
 [
 {
     "imageName": "bag1",
+    "id": "bag-1",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "bag2",
     "id": "bag-2",
     "weather" : ["SUNNY", "RAINY"],
     "minTemp": 30,
     "maxTemp": 70
 }
 ,
-
+{
+    "imageName": "bag3",
+    "id": "bag-3",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
 {
     "imageName": "bag4",
-    "id": "bag-5",
+    "id": "bag-4",
     "weather" : ["SUNNY", "RAINY"],
     "minTemp": 30,
     "maxTemp": 70
@@ -18,7 +33,7 @@
 ,
 {
     "imageName": "bag5",
-    "id": "bag-6",
+    "id": "bag-5",
     "weather" : ["SUNNY", "RAINY"],
     "minTemp": 30,
     "maxTemp": 70
@@ -26,10 +41,17 @@
 ,
 {
     "imageName": "bag6",
+    "id": "bag-6",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "bag7",
     "id": "bag-7",
     "weather" : ["SUNNY", "RAINY"],
     "minTemp": 30,
     "maxTemp": 70
 }
-
 ]

@@ -6,4 +6,76 @@
     "minTemp": 30,
     "maxTemp": 70
 }
+,
+{
+    "imageName": "top2",
+    "id": "top-2",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "top3",
+    "id": "top-3",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "top4",
+    "id": "top-4",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "top5",
+    "id": "top-5",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "top6",
+    "id": "top-6",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "top7",
+    "id": "top-7",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "top8",
+    "id": "top-8",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "top9",
+    "id": "top-9",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "top10",
+    "id": "top-10",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
 ]
