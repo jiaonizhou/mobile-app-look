@@ -6,4 +6,28 @@
     "minTemp": 30,
     "maxTemp": 70
 }
+,
+{
+    "imageName": "bottom2",
+    "id": "bottom-2",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "bottom3",
+    "id": "bottom-3",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
+,
+{
+    "imageName": "bottom4",
+    "id": "bottom-4",
+    "weather" : ["SUNNY", "RAINY"],
+    "minTemp": 30,
+    "maxTemp": 70
+}
 ]

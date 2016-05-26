@@ -47,4 +47,5 @@
         android:layout_gravity="center_horizontal"
         android:textSize="20sp"
         android:checked="false" />
+
 </LinearLayout>

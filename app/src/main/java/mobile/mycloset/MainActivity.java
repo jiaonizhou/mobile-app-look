@@ -67,10 +67,12 @@ public class MainActivity extends AppFragmentActivity {
         bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
 
 
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.notification_background, R.color.color_tab_1);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.notification_background, R.color.color_tab_2);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.notification_background, R.color.color_tab_3);
-        AHBottomNavigationItem item4 = new AHBottomNavigationItem(R.string.tab_4, R.drawable.notification_background, R.color.color_tab_4);
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_action_home, R.color.color_tab_1);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.ic_action_closet, R.color.color_tab_2);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.ic_action_addcloth, R.color.color_tab_3);
+        AHBottomNavigationItem item4 = new AHBottomNavigationItem(R.string.tab_4, R.drawable.ic_action_fav, R.color.color_tab_4);
+
+
 
 
         bottomNavigationItems.add(item1);

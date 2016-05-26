@@ -72,10 +72,17 @@ public class ClosetFragment extends Fragment {
                 activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
-        topButton.setOnClickListener(new View.OnClickListener() {
+        shoesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.TOP, null);
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.SHOES, null);
+                activity.pushFragment(R.id.fragment_container, fragment);
+            }
+        });
+        accessaryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.ACCESSORY, null);
                 activity.pushFragment(R.id.fragment_container, fragment);
             }
         });

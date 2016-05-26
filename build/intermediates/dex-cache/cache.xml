@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/jiaonizhou/Documents/SCU/3rd quarter/COEN268-Mobile-Application/Look/look/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="6c4e9d72a0f140e9706fde529ace3cd1e3d8594f">
+        <dex dex="/Users/jiaonizhou/Documents/SCU/3rd quarter/COEN268-Mobile-Application/Look/look/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5ea21deee18ec5d6e84b606de85eea09dd6dcabb/classes.dex" />
+    </item>
+
+</items>
