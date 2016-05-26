@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -23,18 +25,19 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.UUID;
 
 import mobile.mycloset.model.Bag;
 import mobile.mycloset.model.Bottom;
+import mobile.mycloset.model.Closet;
 import mobile.mycloset.model.OnePiece;
 import mobile.mycloset.model.Top;
 import mobile.mycloset.model.Shoe;
 import mobile.mycloset.model.WeatherParser;
 
-public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSelectedListener, NumberPicker.OnValueChangeListener {
+public class AddCloth extends Fragment implements AdapterView.OnItemSelectedListener, NumberPicker.OnValueChangeListener {
 
-
-    String[] weather = {"Sunny", "Cloudy", "Rainy", "Windy","Snowy"};
     String[] type = {"Top", "Bottom", "Dress","Accessory", "Shoes", "Bag"};
     String[] min_range = {"30","40","50"};
     String[] max_range = {"50","60","70","80","90"};
@@ -45,26 +48,39 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
     Shoe shoes;
     Top top;
         //Accessory accs;
-    int selectedType;
-    int selectedMin;
-    int selectedMax;
-    ArrayList<String> selectedWeather = new ArrayList<String>();
+    int selectedType = 0;
+    int selectedMin = 30;
+    int selectedMax = 50;
+    List<WeatherParser.Weather> selectedWeather = new ArrayList<>();
 
+    private static AddCloth fragment;
 
+    private View view;
 
+    public static AddCloth getInstance() {
+        if (fragment == null) {
+            fragment = new AddCloth();
+        }
+
+        return fragment;
+    }
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_cloth);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.activity_add_cloth, container, false);
+        initView();
+        return view;
+    }
 
-        fileName = getIntent().getExtras().get("filename").toString();
+    protected void initView() {
         Log.i("getfilepath: ", fileName);
         //fileName = fileName.substring(8);
 
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
         imageView.setImageURI(Uri.parse(fileName));
 
-        Button bTakePic = (Button) findViewById(R.id.button);
+        Button bTakePic = (Button)view.findViewById(R.id.button);
         bTakePic.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String sfile = fileName.substring(7);
@@ -79,18 +95,17 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
         });
 
 
-        Button bNext = (Button) findViewById(R.id.next);
+        Button bNext = (Button)view.findViewById(R.id.next);
         bNext.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 typePicker() ;
             }
         });
-
     }
 
     public void typePicker() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(AddCloth.this);
-        final NumberPicker np_tppe = new NumberPicker(AddCloth.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        final NumberPicker np_tppe = new NumberPicker(getContext());
         //NumberPicker np = (NumberPicker) findViewById(R.id.numberPicker1);
         np_tppe.setMaxValue(type.length - 1);
         np_tppe.setMinValue(0);
@@ -126,9 +141,10 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
     }
 
     public void weatherPicker() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(AddCloth.this);
-        LayoutInflater inflater = getLayoutInflater();
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        LayoutInflater inflater = getActivity().getLayoutInflater();
         View npView = inflater.inflate(R.layout.weather_picker, null);
+<<<<<<< HEAD
         CheckBox chkbox1 = (CheckBox) npView.findViewById(R.id.checkBox);
         CheckBox chkbox2 = (CheckBox) npView.findViewById(R.id.checkBox2);
         CheckBox chkbox3 = (CheckBox) npView.findViewById(R.id.checkBox3);
@@ -157,12 +173,40 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
 //        np.setMinValue(0);
 //        np.setDisplayedValues(weather);
 //        np.setWrapSelectorWheel(false);
+=======
+        // SUNNY
+        final CheckBox chkbox1 = (CheckBox) npView.findViewById(R.id.checkBox);
+        // CLOUDY
+        final CheckBox chkbox2 = (CheckBox) npView.findViewById(R.id.checkBox2);
+        // RAINY
+        final CheckBox chkbox3 = (CheckBox) npView.findViewById(R.id.checkBox3);
+        // WINDY
+        final CheckBox chkbox4 = (CheckBox) npView.findViewById(R.id.checkBox4);
+        // SNOWY
+        final CheckBox chkbox5 = (CheckBox) npView.findViewById(R.id.checkBox5);
+>>>>>>> 11b6f4c9867129be5f2c07739508de9960f7b870
 
         builder.setTitle("Cloth is good for")
                 .setView(npView);
 
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
+                if (chkbox1.isChecked()){
+                    selectedWeather.add(WeatherParser.Weather.SUNNY);
+                }
+                if (chkbox2.isChecked()){
+                    selectedWeather.add(WeatherParser.Weather.CLOUDY);
+                }
+                if (chkbox3.isChecked()){
+                    selectedWeather.add(WeatherParser.Weather.RAINY);
+                }
+                if (chkbox4.isChecked()){
+                    selectedWeather.add(WeatherParser.Weather.WINDY);
+                }
+                if (chkbox5.isChecked()){
+                    selectedWeather.add(WeatherParser.Weather.SNOWY);
+                }
+
                 // Do something with value!
 
                 warmthPicker();
@@ -187,8 +231,8 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
 
     public void warmthPicker() {
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(AddCloth.this);
-        LayoutInflater inflater = getLayoutInflater();
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        LayoutInflater inflater = getActivity().getLayoutInflater();
         View npView = inflater.inflate(R.layout.warmth_picker, null);
 
         final NumberPicker min_np = (NumberPicker) npView.findViewById(R.id.minPicker);
@@ -226,38 +270,55 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
                 // Do something with value!
                 switch (selectedType){
                     case 0: top = new Top();
+                        top.id = UUID.randomUUID().toString();
+                        top.weathers = selectedWeather;
                         top.minTemp = selectedMin;
                         top.maxTemp = selectedMax;
                         top.filePath = fileName;
+                        Closet.getCloset().tops.add(top);
                         break;
                     case 1: bottom = new Bottom();
+                        bottom.id = UUID.randomUUID().toString();
+                        bottom.weathers = selectedWeather;
                         bottom.minTemp = selectedMin;
                         bottom.maxTemp = selectedMax;
                         bottom.filePath = fileName;
+                        Closet.getCloset().bottoms.add(bottom);
                         break;
                     case 2:  onePiece = new OnePiece();
+                        onePiece.id = UUID.randomUUID().toString();
+                        onePiece.weathers = selectedWeather;
                         onePiece.minTemp = selectedMin;
                         onePiece.maxTemp = selectedMax;
                         onePiece.filePath = fileName;
+                        Closet.getCloset().onePieces.add(onePiece);
                         break;
-//                    case 3: accs = new Top();
-//                        break;
                     case 4: shoes = new Shoe();
+                        shoes.id = UUID.randomUUID().toString();
+                        shoes.weathers = selectedWeather;
                         shoes.minTemp = selectedMin;
                         shoes.maxTemp = selectedMax;
                         shoes.filePath = fileName;
+                        Closet.getCloset().shoes.add(shoes);
                         break;
                     case 5: bag = new Bag();
+                        bag.id = UUID.randomUUID().toString();
+                        bag.weathers = selectedWeather;
                         bag.minTemp = selectedMin;
                         bag.maxTemp = selectedMax;
                         bag.filePath = fileName;
+                        Closet.getCloset().bags.add(bag);
                         break;
                 }
+<<<<<<< HEAD
 //                Fragment fragment = null;
 //                fragment = TodayFragment.getInstance();
 //                newFragment(R.id.fragment_container, fragment);
 
 
+=======
+                Closet.getCloset().save(getActivity());
+>>>>>>> 11b6f4c9867129be5f2c07739508de9960f7b870
             }
         });
 
@@ -294,10 +355,10 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode != 1234 || resultCode != RESULT_OK) return;
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode != 1234) return;
 
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
         imageView.setImageURI(Uri.parse(fileName));
     }
 

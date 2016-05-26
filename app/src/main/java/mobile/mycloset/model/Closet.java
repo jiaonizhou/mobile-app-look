@@ -1,5 +1,6 @@
 package mobile.mycloset.model;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 
 import org.json.JSONArray;
@@ -16,16 +17,13 @@ import java.util.Random;
 import java.util.UUID;
 
 import mobile.mycloset.R;
+import mobile.mycloset.utils.InternalStorage;
 import mobile.mycloset.utils.Utils;
 
 /**
  * Created by xrz on 5/15/16.
  */
 public class Closet {
-
-    public enum ApprarelType {
-        TOP, BOTTOM, SHOES, BAG, DRESS, ACCESSORY;
-    }
 
     private static Closet closet;
 
@@ -37,7 +35,6 @@ public class Closet {
 
     public List<TopBottomSuite> topBottomSuites = new ArrayList<>();
 
-
     public static Closet getCloset() {
         if (closet == null) {
             closet = new Closet();
@@ -47,6 +44,10 @@ public class Closet {
     }
 
     public void initCloset(AppCompatActivity activity) {
+        if (tops.size() > 0 || bottoms.size() > 0 || shoes.size() > 0 || bags.size() > 0) {
+            return;
+        }
+
         try {
             List<Apparel> apparel = initApparel(activity, R.raw.bag, Class.forName("mobile.mycloset.model.Bag"));
             for (Apparel a : apparel) {
@@ -98,7 +99,7 @@ public class Closet {
                 JSONObject jobj = jArray.getJSONObject(i);
 
                 String imageName = jobj.getString("imageName");
-                String id = UUID.randomUUID().toString();
+                String id = jobj.getString("id");
                 double minTemp = jobj.getDouble("minTemp");
                 double maxTemp = jobj.getDouble("maxTemp");
                 List<WeatherParser.Weather> weatherList = new ArrayList<WeatherParser.Weather>();
@@ -135,17 +136,18 @@ public class Closet {
     }
 
     // fav a suite
-    public void favSuite(TopBottomSuite suite) {
+    public Closet favSuite(TopBottomSuite suite) {
         // Check duplicates
         for (TopBottomSuite s: topBottomSuites) {
              if (s.isEqual(suite)) {
-                 return;
+                 return this;
              }
         }
         topBottomSuites.add(suite);
+        return this;
     }
 
-    public List<? extends Apparel> getAllApparel(ApprarelType type) {
+    public List<? extends Apparel> getAllApparel(Apparel.ApprarelType type) {
         switch (type) {
             case TOP:
                 return tops;
@@ -157,6 +159,34 @@ public class Closet {
                 return shoes;
         }
         return new ArrayList<Top>();
+    }
+
+    public Closet save(Activity activity) {
+        try {
+            InternalStorage.writeObject(activity, "ALL_TOPS", tops);
+            InternalStorage.writeObject(activity, "ALL_BOTTOMS", bottoms);
+            InternalStorage.writeObject(activity, "ALL_SHOES", shoes);
+            InternalStorage.writeObject(activity, "ALL_BAGS", bags);
+            InternalStorage.writeObject(activity, "ALL_SUITES", topBottomSuites);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return this;
+    }
+
+    public Closet load(Activity activity) {
+        try {
+            tops = (List<Top>)InternalStorage.readObject(activity, "ALL_TOPS");
+            bottoms = (List<Bottom>)InternalStorage.readObject(activity, "ALL_BOTTOMS");
+            shoes = (List<Shoe>)InternalStorage.readObject(activity, "ALL_SHOES");
+            bags = (List<Bag>)InternalStorage.readObject(activity, "ALL_BAGS");
+            topBottomSuites = (List<TopBottomSuite>)InternalStorage.readObject(activity, "ALL_SUITES");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return this;
     }
 
     private Apparel randomSelect(List<? extends Apparel> candidates, Utils.WeatherInfo weatherInfo) {

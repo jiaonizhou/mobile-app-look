@@ -1,7 +1,7 @@
 [
 {
-    "imageName": "shoe1",
-    "id": "shoe-1",
+    "imageName": "shoes1",
+    "id": "shoes-1",
     "weather" : ["SUNNY", "RAINY"],
     "minTemp": 30,
     "maxTemp": 70

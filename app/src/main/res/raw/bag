@@ -7,22 +7,7 @@
     "maxTemp": 70
 }
 ,
-{
-    "imageName": "bag2",
-    "id": "bag-3",
-    "weather" : ["SUNNY", "RAINY"],
-    "minTemp": 30,
-    "maxTemp": 70
-}
-,
-{
-    "imageName": "bag3",
-    "id": "bag-4",
-    "weather" : ["SUNNY", "RAINY"],
-    "minTemp": 30,
-    "maxTemp": 70
-}
-,
+
 {
     "imageName": "bag4",
     "id": "bag-5",

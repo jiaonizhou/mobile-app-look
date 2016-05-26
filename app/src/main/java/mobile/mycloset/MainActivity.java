@@ -57,7 +57,7 @@ public class MainActivity extends AppFragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        Closet.getCloset().initCloset(this);
+        Closet.getCloset().load(this).initCloset(this);
         initUI();
         acquireRunTimePermissions();
     }
@@ -119,9 +119,9 @@ public class MainActivity extends AppFragmentActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
-            Intent intent = new Intent(this, AddCloth.class);
-            intent.putExtra("filename", fileName);
-            startActivity(intent);
+            AddCloth fragment = AddCloth.getInstance();
+            fragment.fileName = fileName;
+            newFragment(R.id.fragment_container, fragment);
         }
     }
 
