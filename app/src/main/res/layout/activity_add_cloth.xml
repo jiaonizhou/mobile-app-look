@@ -9,67 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="mobile.mycloset.AddCloth">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Warmth"
-        android:id="@+id/tv2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="25sp" />
-
-    <Spinner
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/warmth"
-        android:layout_alignTop="@+id/tv2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Category"
-        android:id="@+id/tv1"
-        android:textSize="25sp"
-        android:layout_below="@+id/warmth"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/category"
-        android:layout_below="@+id/warmth"
-        android:layout_alignLeft="@+id/warmth"
-        android:layout_alignStart="@+id/warmth"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Type"
-        android:id="@+id/tv3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="25sp"
-        android:layout_below="@+id/category" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/type"
-        android:layout_below="@+id/category"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/category"
-        android:focusableInTouchMode="true" />
-
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:id="@+id/imageView"
-        android:layout_below="@+id/type"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -77,10 +20,10 @@
         android:layout_height="wrap_content"
         android:text="Take Picture"
         android:id="@+id/button"
-        android:layout_marginTop="38dp"
         android:layout_below="@+id/imageView"
-        android:layout_toLeftOf="@+id/type"
-        android:layout_toStartOf="@+id/type" />
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginTop="43dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -88,9 +31,7 @@
         android:text="Next"
         android:id="@+id/next"
         android:layout_alignTop="@+id/button"
-        android:layout_alignRight="@+id/type"
-        android:layout_alignEnd="@+id/type"
-        android:layout_marginRight="54dp"
-        android:layout_marginEnd="54dp" />
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
 
 </RelativeLayout>
