@@ -33,6 +33,7 @@ public class Closet {
     public List<Bottom> bottoms = new ArrayList<>();
     public List<Shoe> shoes = new ArrayList<>();
     public List<Bag> bags = new ArrayList<>();
+    public List<OnePiece> onePieces = new ArrayList<>();
 
     public List<TopBottomSuite> topBottomSuites = new ArrayList<>();
 

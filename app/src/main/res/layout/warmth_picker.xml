@@ -3,30 +3,63 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <NumberPicker
-        android:id="@+id/numberPicker1"
+        android:id="@+id/maxPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="77dp"
+        android:layout_marginEnd="77dp" />
 
-    <Button
-        android:id="@+id/button2"
+    <NumberPicker
+        android:id="@+id/minPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
-        android:text="Cancel"
-        android:layout_below="@+id/numberPicker1"
-        android:layout_toRightOf="@+id/numberPicker1"
-        android:layout_toEndOf="@+id/numberPicker1" />
+        android:layout_marginLeft="77dp"
+        android:layout_marginStart="77dp"
+        android:layout_alignTop="@+id/maxPicker"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <Button
-        android:id="@+id/button1"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Set"
-        android:layout_alignTop="@+id/button2"
-        android:layout_toLeftOf="@+id/numberPicker1"
-        android:layout_toStartOf="@+id/numberPicker1" />
+        android:text="Min"
+        android:id="@+id/textView2"
+        android:textSize="20sp"
+        android:layout_above="@+id/minPicker"
+        android:layout_alignLeft="@+id/minPicker"
+        android:layout_alignStart="@+id/minPicker" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max"
+        android:id="@+id/textView3"
+        android:textSize="20sp"
+        android:layout_above="@+id/minPicker"
+        android:layout_alignLeft="@+id/maxPicker"
+        android:layout_alignStart="@+id/maxPicker" />
+
+    <!--<Button-->
+        <!--android:id="@+id/button2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="98dp"-->
+        <!--android:text="Cancel"-->
+        <!--android:layout_below="@+id/numberPicker1"-->
+        <!--android:layout_toRightOf="@+id/numberPicker1"-->
+        <!--android:layout_toEndOf="@+id/numberPicker1" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/button1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Set"-->
+        <!--android:layout_alignTop="@+id/button2"-->
+        <!--android:layout_toLeftOf="@+id/numberPicker1"-->
+        <!--android:layout_toStartOf="@+id/numberPicker1" />-->
 
 </RelativeLayout>
