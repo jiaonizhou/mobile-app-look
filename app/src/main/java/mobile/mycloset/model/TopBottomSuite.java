@@ -1,9 +1,11 @@
 package mobile.mycloset.model;
 
+import java.io.Serializable;
+
 /**
  * Created by xrz on 5/15/16.
  */
-public class TopBottomSuite {
+public class TopBottomSuite implements Serializable {
     public Top top;
     public Bottom bottom;
     public Bag bag;

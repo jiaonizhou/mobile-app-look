@@ -26,10 +26,10 @@ public class ClosetListFragment extends Fragment implements AdapterView.OnItemCl
     private static ClosetListFragment fragment;
 
     private View view;
-    private Closet.ApprarelType type;
+    private Apparel.ApprarelType type;
     private OnClickItemListener listener;
 
-    public static ClosetListFragment getInstance(Closet.ApprarelType type, OnClickItemListener listener) {
+    public static ClosetListFragment getInstance(Apparel.ApprarelType type, OnClickItemListener listener) {
         fragment = new ClosetListFragment();
         fragment.type = type;
         fragment.listener = listener;

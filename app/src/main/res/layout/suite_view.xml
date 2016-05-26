@@ -2,7 +2,7 @@
     <GridLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="350dp"
         android:columnCount="3"
         android:rowCount="3"
         >

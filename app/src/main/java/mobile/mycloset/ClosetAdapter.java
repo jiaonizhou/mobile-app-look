@@ -1,6 +1,7 @@
 package mobile.mycloset;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -56,7 +57,7 @@ public class ClosetAdapter extends BaseAdapter {
             imageView = (ImageView) convertView;
         }
 
-        imageView.setImageResource(buttonList.get(position).getResourceId(context));
+        imageView.setImageBitmap(buttonList.get(position).getBitmap(context));
         return imageView;
     }
 }

@@ -92,20 +92,20 @@ public class TodayFragment extends Fragment {
                                 tempView.setText(weatherInfo.temperature + " F");
 
                                 if (suite != null && suite.isValid()) {
-                                    bagView.setImageResource(suite.bag.getResourceId(getActivity()));
-                                    shoeView.setImageResource(suite.shoe.getResourceId(getActivity()));
-                                    topView.setImageResource(suite.top.getResourceId(getActivity()));
-                                    bottomView.setImageResource(suite.bottom.getResourceId(getActivity()));
+                                    bagView.setImageBitmap(suite.bag.getBitmap(getActivity()));
+                                    shoeView.setImageBitmap(suite.shoe.getBitmap(getActivity()));
+                                    topView.setImageBitmap(suite.top.getBitmap(getActivity()));
+                                    bottomView.setImageBitmap(suite.bottom.getBitmap(getActivity()));
 
                                     bagView.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BAG,
+                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.BAG,
                                                     new ClosetListFragment.OnClickItemListener() {
                                                         @Override
                                                         public void onClick(AdapterView parent, View view, Apparel apparel) {
                                                             suite.bag = (Bag)apparel;
-                                                            bagView.setImageResource(suite.bag.getResourceId(getActivity()));
+                                                            bagView.setImageBitmap(suite.bag.getBitmap(getActivity()));
                                                             activity.popFragment();
                                                         }
                                                     });
@@ -115,12 +115,12 @@ public class TodayFragment extends Fragment {
                                     topView.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.TOP,
+                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.TOP,
                                                     new ClosetListFragment.OnClickItemListener() {
                                                         @Override
                                                         public void onClick(AdapterView parent, View view, Apparel apparel) {
                                                             suite.top = (Top)apparel;
-                                                            topView.setImageResource(suite.top.getResourceId(getActivity()));
+                                                            topView.setImageBitmap(suite.top.getBitmap(getActivity()));
                                                             activity.popFragment();
                                                         }
                                                     });
@@ -130,12 +130,12 @@ public class TodayFragment extends Fragment {
                                     bottomView.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BOTTOM,
+                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.BOTTOM,
                                                     new ClosetListFragment.OnClickItemListener() {
                                                         @Override
                                                         public void onClick(AdapterView parent, View view, Apparel apparel) {
                                                             suite.bottom = (Bottom)apparel;
-                                                            bottomView.setImageResource(suite.bottom.getResourceId(getActivity()));
+                                                            bottomView.setImageBitmap(suite.bottom.getBitmap(getActivity()));
                                                             activity.popFragment();
                                                         }
                                                     });
@@ -145,12 +145,12 @@ public class TodayFragment extends Fragment {
                                     shoeView.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.SHOES,
+                                            ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.SHOES,
                                                     new ClosetListFragment.OnClickItemListener() {
                                                         @Override
                                                         public void onClick(AdapterView parent, View view, Apparel apparel) {
                                                             suite.shoe = (Shoe)apparel;
-                                                            shoeView.setImageResource(suite.shoe.getResourceId(getActivity()));
+                                                            shoeView.setImageBitmap(suite.shoe.getBitmap(getActivity()));
                                                             activity.popFragment();
                                                         }
                                                     });
@@ -164,7 +164,8 @@ public class TodayFragment extends Fragment {
                                 favButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        Closet.getCloset().favSuite(suite);
+                                        Closet.getCloset().favSuite(suite).save(activity);
+
                                     }
                                 });
                             }

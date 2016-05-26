@@ -66,10 +66,10 @@ public class FavFragment extends Fragment {
         @Override
         public void onBindViewHolder(FavCardHolder contactViewHolder, int i) {
             TopBottomSuite suite = suites.get(i);
-            contactViewHolder.bagView.setImageResource(suite.bag.getResourceId(context));
-            contactViewHolder.shoeView.setImageResource(suite.shoe.getResourceId(context));
-            contactViewHolder.topView.setImageResource(suite.top.getResourceId(context));
-            contactViewHolder.bottomView.setImageResource(suite.bottom.getResourceId(context));
+            contactViewHolder.bagView.setImageBitmap(suite.bag.getBitmap(context));
+            contactViewHolder.shoeView.setImageBitmap(suite.shoe.getBitmap(context));
+            contactViewHolder.topView.setImageBitmap(suite.top.getBitmap(context));
+            contactViewHolder.bottomView.setImageBitmap(suite.bottom.getBitmap(context));
         }
 
         @Override

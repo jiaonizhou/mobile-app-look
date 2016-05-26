@@ -47,35 +47,35 @@ public class ClosetFragment extends Fragment {
         topButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.TOP, null);
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.TOP, null);
                 activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
         bottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BOTTOM, null);
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.BOTTOM, null);
                 activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
         dressButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.DRESS, null);
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.DRESS, null);
                 activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
         bagButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.BAG, null);
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.BAG, null);
                 activity.pushFragment(R.id.fragment_container, fragment);
             }
         });
         topButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClosetListFragment fragment = ClosetListFragment.getInstance(Closet.ApprarelType.TOP, null);
+                ClosetListFragment fragment = ClosetListFragment.getInstance(Apparel.ApprarelType.TOP, null);
                 activity.pushFragment(R.id.fragment_container, fragment);
             }
         });

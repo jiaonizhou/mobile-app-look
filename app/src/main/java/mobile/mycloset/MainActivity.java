@@ -47,7 +47,7 @@ public class MainActivity extends AppFragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        Closet.getCloset().initCloset(this);
+        Closet.getCloset().load(this).initCloset(this);
         initUI();
     }
 
