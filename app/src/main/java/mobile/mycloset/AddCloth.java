@@ -104,6 +104,7 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 selectedType = np_tppe.getValue();
+                Log.i("type",Integer.toString(selectedType));
             }
         });
 
@@ -133,9 +134,9 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
         CheckBox chkbox3 = (CheckBox) npView.findViewById(R.id.checkBox3);
         CheckBox chkbox4 = (CheckBox) npView.findViewById(R.id.checkBox4);
         CheckBox chkbox5 = (CheckBox) npView.findViewById(R.id.checkBox5);
-
         if (chkbox1.isChecked()){
             selectedWeather.add(chkbox1.getText().toString());
+            Log.i("weather",chkbox1.getText().toString());
         }
         if (chkbox2.isChecked()){
             selectedWeather.add(chkbox2.getText().toString());
@@ -149,6 +150,8 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
         if (chkbox5.isChecked()){
             selectedWeather.add(chkbox5.getText().toString());
         }
+
+
 //        NumberPicker np = new NumberPicker(AddCloth.this);
 //        np.setMaxValue(weather.length - 1);
 //        np.setMinValue(0);
@@ -161,6 +164,7 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 // Do something with value!
+
                 warmthPicker();
             }
         });
@@ -203,6 +207,7 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 selectedMin = Integer.parseInt(min_range[min_np.getValue()]);
+                Log.i("min",min_range[min_np.getValue()]);
             }
         });
 
@@ -248,9 +253,9 @@ public class AddCloth extends AppCompatActivity implements AdapterView.OnItemSel
                         bag.filePath = fileName;
                         break;
                 }
-                Fragment fragment = null;
-                fragment = TodayFragment.getInstance();
-                newFragment(R.id.fragment_container, fragment);
+//                Fragment fragment = null;
+//                fragment = TodayFragment.getInstance();
+//                newFragment(R.id.fragment_container, fragment);
 
 
             }
