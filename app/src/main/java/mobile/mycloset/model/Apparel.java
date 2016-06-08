@@ -11,9 +11,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by xrz on 5/12/16.
- */
 public class Apparel implements Serializable {
 
     public enum ApprarelType {
@@ -45,6 +42,25 @@ public class Apparel implements Serializable {
 
     public boolean isEqual(Apparel a) {
         return id == a.id;
+    }
+
+    public static String apparelString(ApprarelType type) {
+        switch (type) {
+            case TOP:
+                return "Top";
+            case BOTTOM:
+                return "Bottom";
+            case SHOES:
+                return "Shoes";
+            case BAG:
+                return "Bag";
+            case DRESS:
+                return "Dress";
+            case ACCESSORY:
+                return "Accessory";
+            default:
+                return null;
+        }
     }
 }
 

@@ -17,9 +17,6 @@ import java.util.List;
 import mobile.mycloset.model.Closet;
 import mobile.mycloset.model.TopBottomSuite;
 
-/**
- * Created by xrz on 5/21/16.
- */
 public class FavFragment extends Fragment {
     private static FavFragment fragment;
 

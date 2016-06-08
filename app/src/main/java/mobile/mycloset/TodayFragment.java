@@ -33,9 +33,6 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-/**
- * Created by xrz on 5/14/16.
- */
 public class TodayFragment extends Fragment {
     private static TodayFragment fragment;
 

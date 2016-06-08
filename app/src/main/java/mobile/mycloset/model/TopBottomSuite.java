@@ -1,10 +1,8 @@
 package mobile.mycloset.model;
 
 import java.io.Serializable;
+import android.util.Log;
 
-/**
- * Created by xrz on 5/15/16.
- */
 public class TopBottomSuite implements Serializable {
     public Top top;
     public Bottom bottom;
@@ -12,7 +10,11 @@ public class TopBottomSuite implements Serializable {
     public Shoe shoe;
 
     public boolean isValid() {
-        return top != null && bottom != null && bag != null && shoe != null;
+        boolean success = top != null && bottom != null && bag != null && shoe != null;
+        if (bottom == null) {
+            Log.i("is not valid", "false");
+        }
+        return success;
     }
 
     public boolean isEqual(TopBottomSuite suite) {

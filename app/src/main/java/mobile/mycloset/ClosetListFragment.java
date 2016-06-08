@@ -9,15 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
+
 
 import java.util.List;
 
 import mobile.mycloset.model.Apparel;
 import mobile.mycloset.model.Closet;
 
-/**
- * Created by xrz on 5/19/16.
- */
 public class ClosetListFragment extends Fragment implements AdapterView.OnItemClickListener {
     public static abstract class OnClickItemListener<VH extends Apparel> {
         public abstract void onClick(AdapterView<?> parent, View view, VH apparel);
@@ -49,6 +48,9 @@ public class ClosetListFragment extends Fragment implements AdapterView.OnItemCl
         ClosetAdapter adapter = new ClosetAdapter(getContext(), Closet.getCloset().getAllApparel(type));
         gridView.setAdapter(adapter);
         gridView.setOnItemClickListener(this);
+
+        final TextView titleView = (TextView)view.findViewById(R.id.title);
+        titleView.setText(Apparel.apparelString(type));
     }
 
     @Override

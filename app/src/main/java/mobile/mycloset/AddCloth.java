@@ -144,36 +144,7 @@ public class AddCloth extends Fragment implements AdapterView.OnItemSelectedList
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View npView = inflater.inflate(R.layout.weather_picker, null);
-//<<<<<<< HEAD
-//        CheckBox chkbox1 = (CheckBox) npView.findViewById(R.id.checkBox);
-//        CheckBox chkbox2 = (CheckBox) npView.findViewById(R.id.checkBox2);
-//        CheckBox chkbox3 = (CheckBox) npView.findViewById(R.id.checkBox3);
-//        CheckBox chkbox4 = (CheckBox) npView.findViewById(R.id.checkBox4);
-//        CheckBox chkbox5 = (CheckBox) npView.findViewById(R.id.checkBox5);
-//        if (chkbox1.isChecked()){
-//            selectedWeather.add(chkbox1.getText().toString());
-//            Log.i("weather",chkbox1.getText().toString());
-//        }
-//        if (chkbox2.isChecked()){
-//            selectedWeather.add(chkbox2.getText().toString());
-//        }
-//        if (chkbox3.isChecked()){
-//            selectedWeather.add(chkbox3.getText().toString());
-//        }
-//        if (chkbox4.isChecked()){
-//            selectedWeather.add(chkbox4.getText().toString());
-//        }
-//        if (chkbox5.isChecked()){
-//            selectedWeather.add(chkbox5.getText().toString());
-//        }
-//
 
-//        NumberPicker np = new NumberPicker(AddCloth.this);
-//        np.setMaxValue(weather.length - 1);
-//        np.setMinValue(0);
-//        np.setDisplayedValues(weather);
-//        np.setWrapSelectorWheel(false);
-//=======
         // SUNNY
         final CheckBox chkbox1 = (CheckBox) npView.findViewById(R.id.checkBox);
         // CLOUDY
@@ -184,7 +155,6 @@ public class AddCloth extends Fragment implements AdapterView.OnItemSelectedList
         final CheckBox chkbox4 = (CheckBox) npView.findViewById(R.id.checkBox4);
         // SNOWY
         final CheckBox chkbox5 = (CheckBox) npView.findViewById(R.id.checkBox5);
-//>>>>>>> 11b6f4c9867129be5f2c07739508de9960f7b870
 
         builder.setTitle("Cloth is good for")
                 .setView(npView);
@@ -310,15 +280,9 @@ public class AddCloth extends Fragment implements AdapterView.OnItemSelectedList
                         Closet.getCloset().bags.add(bag);
                         break;
                 }
-//<<<<<<< HEAD
-////                Fragment fragment = null;
-////                fragment = TodayFragment.getInstance();
-////                newFragment(R.id.fragment_container, fragment);
-//
-//
-//=======
+
                 Closet.getCloset().save(getActivity());
-//>>>>>>> 11b6f4c9867129be5f2c07739508de9960f7b870
+
             }
         });
 
@@ -374,7 +338,6 @@ public class AddCloth extends Fragment implements AdapterView.OnItemSelectedList
 
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-
 
     }
 }

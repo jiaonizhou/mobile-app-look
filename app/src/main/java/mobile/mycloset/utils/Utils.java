@@ -11,9 +11,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-/**
- * Created by xrz on 5/12/16.
- */
 public class Utils {
     public static class WeatherInfo {
         public WeatherParser.Weather weather = WeatherParser.Weather.SUNNY;

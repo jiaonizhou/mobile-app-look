@@ -7,9 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.Stack;
 
-/**
- * Created by xrz on 5/21/16.
- */
 public class AppFragmentActivity extends AppCompatActivity {
 
     private FragmentManager fragmentManager = getFragmentManager();

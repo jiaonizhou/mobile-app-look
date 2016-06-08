@@ -11,9 +11,6 @@ import android.widget.Button;
 
 import mobile.mycloset.model.*;
 
-/**
- * Created by xrz on 5/18/16.
- */
 public class ClosetFragment extends Fragment {
     private static ClosetFragment fragment;
 

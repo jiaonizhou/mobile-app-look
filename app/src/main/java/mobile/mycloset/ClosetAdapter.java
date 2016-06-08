@@ -12,9 +12,6 @@ import java.util.List;
 
 import mobile.mycloset.model.Apparel;
 
-/**
- * Created by Cindy on 5/18/16.
- */
 public class ClosetAdapter extends BaseAdapter {
     private Context context;
     List<? extends Apparel> buttonList;

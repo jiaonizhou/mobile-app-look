@@ -20,9 +20,6 @@ import mobile.mycloset.R;
 import mobile.mycloset.utils.InternalStorage;
 import mobile.mycloset.utils.Utils;
 
-/**
- * Created by xrz on 5/15/16.
- */
 public class Closet {
 
     private static Closet closet;

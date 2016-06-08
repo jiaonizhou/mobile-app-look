@@ -2,56 +2,56 @@
 {
     "imageName": "shoes1",
     "id": "shoes-1",
-    "weather" : ["SUNNY", "RAINY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY"],
     "minTemp": 30,
-    "maxTemp": 70
+    "maxTemp": 80
 }
 ,
 {
     "imageName": "shoes2",
     "id": "shoes-2",
-    "weather" : ["SUNNY", "RAINY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY"],
     "minTemp": 30,
-    "maxTemp": 70
+    "maxTemp": 80
 }
 ,
 {
     "imageName": "shoes3",
     "id": "shoes-3",
-    "weather" : ["SUNNY", "RAINY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY"],
     "minTemp": 30,
-    "maxTemp": 70
+    "maxTemp": 80
 }
 ,
 {
     "imageName": "shoes4",
     "id": "shoes-4",
-    "weather" : ["SUNNY", "RAINY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY"],
     "minTemp": 30,
-    "maxTemp": 70
+    "maxTemp": 80
 }
 ,
 {
     "imageName": "shoes5",
     "id": "shoes-5",
-    "weather" : ["SUNNY", "RAINY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY"],
     "minTemp": 30,
-    "maxTemp": 70
+    "maxTemp": 80
 }
 ,
 {
     "imageName": "shoes6",
     "id": "shoes-6",
-    "weather" : ["SUNNY", "RAINY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY"],
     "minTemp": 30,
-    "maxTemp": 70
+    "maxTemp": 80
 }
 ,
 {
     "imageName": "shoes7",
     "id": "shoes-7",
-    "weather" : ["SUNNY", "RAINY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY"],
     "minTemp": 30,
-    "maxTemp": 70
+    "maxTemp": 80
 }
 ]
