@@ -16,4 +16,53 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <GridLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/suite"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:layout_below="@+id/calendarView">
+        <ImageView android:layout_row="1"
+            android:layout_column="0"
+            android:id="@+id/bag_placeholder"
+            android:src="@drawable/bag1"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+
+        <ImageView android:layout_row="0"
+            android:layout_column="1"
+            android:layout_rowSpan="2"
+            android:id="@+id/top_placeholder"
+            android:src="@drawable/top1"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+        <ImageView android:layout_row="2"
+            android:layout_column="1"
+            android:id="@+id/shoe_placeholder"
+            android:src="@drawable/shoes1"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+        <ImageView android:layout_row="1"
+            android:layout_column="2"
+            android:layout_rowSpan="2"
+            android:id="@+id/bottom_placeholder"
+            android:src="@drawable/bottom1"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+    </GridLayout>
 </RelativeLayout>

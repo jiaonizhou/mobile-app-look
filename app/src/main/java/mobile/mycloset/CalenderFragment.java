@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
+import android.widget.GridLayout;
+import android.widget.GridView;
 import android.widget.Toast;
 
 /**
@@ -35,12 +37,16 @@ public class CalenderFragment extends Fragment {
 
     public void initCalenderFragment(View view) {
         CalendarView calendar = (CalendarView) view.findViewById(R.id.calendarView);
+        final GridLayout gridView = (GridLayout) view.findViewById(R.id.suite);
+        gridView.setVisibility(View.INVISIBLE);
 
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int i, int i1, int i2) {
+                gridView.setVisibility(View.VISIBLE);
+
                 //dateDisplay.setText("Date: " + i2 + " / " + i1 + " / " + i);
-                Toast.makeText(getContext(), "Selected Date:\n" + "Day = " + i2 + "\n" + "Month = " + i1 + "\n" + "Year = " + i, Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Selected Date:\n" + "Day = " + i2 + "\n" + "Month = " + i1 + "\n" + "Year = " + i, Toast.LENGTH_LONG).show();
             }
         });
     }
