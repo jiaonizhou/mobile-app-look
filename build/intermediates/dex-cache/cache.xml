@@ -1,2 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.3.0_c11e386c3fa297c66ddc372f2522453ca8256507/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.3.0_b01ee4433857b827e9fc910160da4dfb54a61599/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="536ea8034ba691bd77a319f7e347bbef1b170297">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c6ff0d68d71fa7bc0fb1343b84d39002af71c424/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_c5d170450fb2268d97206a8fac0bf3a95b8b855f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_989db57948842975dd881b15e4357977d3388521/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/exploded-aar/com.aurelhubert/ahbottomnavigation/1.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="352c0bbe96986ed02e75352a16a63eef8c3b48b2">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.aurelhubert-ahbottomnavigation-1.2.0_d2d70ce722a1b7a9d62613abf6c7eee4169b0afe/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.2.1_92c93b8ffcb4ab1707c7b19445b0c77cfe06cefd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.3.0_f6f9abcce68929ddedff76b7dd7c40ab717ffba1/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_bbd88ba4e9ed60b2f19faca7a8aff408bb6e907c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="3edbf6a5c3e04776fa0394d244892260b3860213">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_22e71baf78cb1e3eaa47c3d2d6546521a239d264/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_1fd989cbf41e7b0770c91eb030380ddf9acb96fa/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.3.0_1a5d5404b55f6afb22b92baf6f9c7cd923de61c9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="/Users/Cindy/Desktop/Look/mobile-app-look/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.2.1_ac83fd071cecdd354c8865f4b359b7b3f1d08a75/classes.dex" />
+    </item>
+
+</items>

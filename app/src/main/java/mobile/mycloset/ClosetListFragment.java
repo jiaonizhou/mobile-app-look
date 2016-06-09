@@ -1,6 +1,9 @@
 package mobile.mycloset;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -27,6 +30,7 @@ public class ClosetListFragment extends Fragment implements AdapterView.OnItemCl
     private View view;
     private Apparel.ApprarelType type;
     private OnClickItemListener listener;
+    private Context context;
 
     public static ClosetListFragment getInstance(Apparel.ApprarelType type, OnClickItemListener listener) {
         fragment = new ClosetListFragment();
@@ -55,6 +59,26 @@ public class ClosetListFragment extends Fragment implements AdapterView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("Look")
+                .setMessage("delete picture?")
+                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which
+                    ) {
+                        return;
+                    }
+                })
+                .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        return;
+                    }
+                })
+                .setCancelable(false)
+        ;
+        builder.create().show();
+
         if (listener == null) {
             return;
         }
