@@ -71,6 +71,7 @@ public class MainActivity extends AppFragmentActivity {
         AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.ic_action_closet, R.color.color_tab_2);
         AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.ic_action_addcloth, R.color.color_tab_3);
         AHBottomNavigationItem item4 = new AHBottomNavigationItem(R.string.tab_4, R.drawable.ic_action_fav, R.color.color_tab_4);
+        AHBottomNavigationItem item5 = new AHBottomNavigationItem("Calendar",R.drawable.ic_action_calendar,R.color.color_tab_5);
 
 
 
@@ -79,6 +80,7 @@ public class MainActivity extends AppFragmentActivity {
         bottomNavigationItems.add(item2);
         bottomNavigationItems.add(item3);
         bottomNavigationItems.add(item4);
+        bottomNavigationItems.add(item5);
 
         bottomNavigation.addItems(bottomNavigationItems);
         bottomNavigation.setAccentColor(Color.parseColor("#F63D2B"));
@@ -101,7 +103,13 @@ public class MainActivity extends AppFragmentActivity {
                     } else if (position == 3) {
                         fragment = FavFragment.getInstance();
                         newFragment(R.id.fragment_container, fragment);
-                    } else if (position == 2){
+                    } else if (position == 4){
+//                        fragment = CalenderFragment.getInstance();
+//                        newFragment(R.id.fragment_container, fragment);
+                        Intent intent = new Intent(MainActivity.this,Calendar.class);
+                        startActivity(intent);
+                    }
+                    else if (position == 2){
                         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                         fileName = getOutputFileName();
                         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.parse(fileName));

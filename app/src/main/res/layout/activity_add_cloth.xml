@@ -10,8 +10,8 @@
     tools:context="mobile.mycloset.AddCloth">
 
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:id="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
@@ -20,10 +20,9 @@
         android:layout_height="wrap_content"
         android:text="Take Picture"
         android:id="@+id/button"
-        android:layout_below="@+id/imageView"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_marginTop="43dp" />
+        android:layout_alignStart="@+id/imageView" />
 
     <Button
         android:layout_width="wrap_content"

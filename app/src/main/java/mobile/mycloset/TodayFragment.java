@@ -23,6 +23,8 @@ import org.json.JSONObject;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import mobile.mycloset.model.Apparel;
 import mobile.mycloset.model.Bag;
@@ -36,6 +38,7 @@ import mobile.mycloset.utils.Utils;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
+import java.util.Date;
 
 public class TodayFragment extends Fragment {
     private static TodayFragment fragment;
@@ -68,6 +71,7 @@ public class TodayFragment extends Fragment {
         final ImageView bottomView = (ImageView)view.findViewById(R.id.bottom_placeholder);
         final Button favButton = (Button)view.findViewById(R.id.fav);
         final Button shareButton = (Button)view.findViewById(R.id.share);
+        final Button saveButton = (Button)view.findViewById(R.id.save);
         final MainActivity activity = (MainActivity)getActivity();
         try {
             Call weatherInfoCall = Utils.getWeatherCall(new Callback() {
@@ -192,6 +196,17 @@ public class TodayFragment extends Fragment {
                                         startActivity(Intent.createChooser(share, "Share to"));
                                     }
                                 });
+
+                                saveButton.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Date date=new Date();
+                                        DateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
+                                        String formattedDate=dateFormat.format(date);
+
+                                    }
+                                });
+
                             }
                         });
                     } catch (org.json.JSONException e) {
