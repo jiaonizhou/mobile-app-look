@@ -10,7 +10,7 @@
 {
     "imageName": "bag2",
     "id": "bag-2",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }
@@ -18,7 +18,7 @@
 {
     "imageName": "bag3",
     "id": "bag-3",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }
@@ -26,7 +26,7 @@
 {
     "imageName": "bag4",
     "id": "bag-4",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }
@@ -34,7 +34,7 @@
 {
     "imageName": "bag5",
     "id": "bag-5",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }
@@ -42,7 +42,7 @@
 {
     "imageName": "bag6",
     "id": "bag-6",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }
@@ -50,7 +50,7 @@
 {
     "imageName": "bag7",
     "id": "bag-7",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }

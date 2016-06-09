@@ -2,7 +2,7 @@
 {
     "imageName": "bottom1",
     "id": "bottom-1",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }
@@ -10,7 +10,7 @@
 {
     "imageName": "bottom2",
     "id": "bottom-2",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }
@@ -18,7 +18,7 @@
 {
     "imageName": "bottom3",
     "id": "bottom-3",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }
@@ -26,7 +26,7 @@
 {
     "imageName": "bottom4",
     "id": "bottom-4",
-    "weather" : ["SUNNY", "RAINY", "SNOWY"],
+    "weather" : ["SUNNY", "RAINY", "SNOWY", "CLOUDY"],
     "minTemp": 30,
     "maxTemp": 80
 }
