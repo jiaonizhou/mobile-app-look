@@ -104,10 +104,8 @@ public class MainActivity extends AppFragmentActivity {
                         fragment = FavFragment.getInstance();
                         newFragment(R.id.fragment_container, fragment);
                     } else if (position == 4){
-//                        fragment = CalenderFragment.getInstance();
-//                        newFragment(R.id.fragment_container, fragment);
-                        Intent intent = new Intent(MainActivity.this,Calendar.class);
-                        startActivity(intent);
+                        fragment = CalenderFragment.getInstance();
+                        newFragment(R.id.fragment_container, fragment);
                     }
                     else if (position == 2){
                         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

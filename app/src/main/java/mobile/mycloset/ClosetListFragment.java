@@ -42,8 +42,8 @@ public class ClosetListFragment extends Fragment implements AdapterView.OnItemCl
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.closet_list_view, container, false);
-        initClosetListView(view);
+        this.view = inflater.inflate(R.layout.closet_list_view, container, false);
+        initClosetListView(this.view);
         return view;
     }
 
@@ -59,14 +59,19 @@ public class ClosetListFragment extends Fragment implements AdapterView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        final GridView gridView = (GridView)this.view.findViewById(R.id.gridView2);
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        final int finalPos = position;
         builder.setTitle("Look")
                 .setMessage("delete picture?")
                 .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which
                     ) {
-                        return;
+                        Apparel apparel = Closet.getCloset().getAllApparel(type).get(finalPos);
+                        Closet.getCloset().getAllApparel(type).remove(apparel);
+                        Closet.getCloset().save(getActivity());
+                        gridView.invalidateViews();
                     }
                 })
                 .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -78,12 +83,6 @@ public class ClosetListFragment extends Fragment implements AdapterView.OnItemCl
                 .setCancelable(false)
         ;
         builder.create().show();
-
-        if (listener == null) {
-            return;
-        }
-        Apparel apparel = Closet.getCloset().getAllApparel(type).get(position);
-        listener.onClick(parent, view, apparel);
     }
 
 }

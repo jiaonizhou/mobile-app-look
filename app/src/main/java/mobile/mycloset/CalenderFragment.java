@@ -2,10 +2,12 @@ package mobile.mycloset;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
+import android.widget.Toast;
 
 /**
  * Created by Cindy on 6/8/16.
@@ -31,5 +33,15 @@ public class CalenderFragment extends Fragment {
         return view;
     }
 
-    public void initCalenderFragment(View view) {}
+    public void initCalenderFragment(View view) {
+        CalendarView calendar = (CalendarView) view.findViewById(R.id.calendarView);
+
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView calendarView, int i, int i1, int i2) {
+                //dateDisplay.setText("Date: " + i2 + " / " + i1 + " / " + i);
+                Toast.makeText(getContext(), "Selected Date:\n" + "Day = " + i2 + "\n" + "Month = " + i1 + "\n" + "Year = " + i, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
 }
